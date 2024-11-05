@@ -8,8 +8,8 @@ class DTO_Producto{
     private $precio;
     private $cliente_id; // Puede ser null
 
-    public function __construct($id, $nombre, $descripcion, $precio) {
-        $this->id = $id;
+    public function __construct($nombre, $descripcion, $precio) {
+        $this->id = null;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->precio = $precio;

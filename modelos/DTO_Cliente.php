@@ -9,8 +9,8 @@
         private $nickname;
         private $pwd;
 
-        public function __construct($id, $nombre, $apellido, $domicilio, $telefono, $nickname, $pwd) {
-            $this->id = $id;
+        public function __construct($nombre, $apellido, $domicilio, $telefono, $nickname, $pwd) {
+            $this->id = null; 
             $this->nombre = $nombre;
             $this->apellido = $apellido;
             $this->domicilio = $domicilio;

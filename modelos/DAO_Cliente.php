@@ -48,7 +48,8 @@ class DAO_Cliente{
         $resultados=$stmt->fetchall(PDO::FETCH_ASSOC);
         $clientes=[];
         foreach($resultados as $fila) {
-            $cliente = new DTO_Cliente($fila["id"], $fila["nombre"], $fila["apellido"], $fila["domicilio"], $fila["telefono"], $fila["nickname"], $fila["pwd"]);
+            $cliente = new DTO_Cliente($fila["nombre"], $fila["apellido"], $fila["domicilio"], $fila["telefono"], $fila["nickname"], $fila["pwd"]);
+            $cliente->setId($fila["id"]);
             $clientes+=$cliente;
         }
         return $clientes; 
@@ -57,25 +58,25 @@ class DAO_Cliente{
     //Devuelve booleano
     public function addCliente($cliente){
         $stmt=$this->conexion->prepare("INSERT INTO $this->nomTabla (nombre, apellido, domicilio, telefono, nickname, pwd) VALUES(:nombre, :apellido, :domicilio, :telefono, :nickname, :pwd)");
-        $stmt=bindParam(":nombre",$cliente->getNombre());
-        $stmt=bindParam(":apellido",$cliente->getApellido());
-        $stmt=bindParam(":domicilio",$cliente->getDomicilio());
-        $stmt=bindParam(":telefono",$cliente->getTelefono());
-        $stmt=bindParam(":nickname",$cliente->getNickname());
-        $stmt=bindParam(":pwd",$cliente->getPwd());
+        $stmt->bindParam(":nombre",$cliente->getNombre());
+        $stmt->bindParam(":apellido",$cliente->getApellido());
+        $stmt->bindParam(":domicilio",$cliente->getDomicilio());
+        $stmt->bindParam(":telefono",$cliente->getTelefono());
+        $stmt->bindParam(":nickname",$cliente->getNickname());
+        $stmt->bindParam(":pwd",$cliente->getPwd());
         return $stmt->execute();
     }
     //Actualizar cliente
     //Devuelve booleano
     public function updateCliente($cliente){
         $stmt=$this->conexion->prepare("UPDATE $this->nomTabla SET nombre = :nombre, apellido = :apellido, domicilio = :domicilio, telefono = :telefono, nickname = :nickname, pwd = :pwd WHERE id = :id");
-        $stmt=bindParam(":nombre",$cliente->getNombre());
-        $stmt=bindParam(":apellido",$cliente->getApellido());
-        $stmt=bindParam(":domicilio",$cliente->getDomicilio());
-        $stmt=bindParam(":telefono",$cliente->getTelefono());
-        $stmt=bindParam(":nickname",$cliente->getNickname());
-        $stmt=bindParam(":pwd",$cliente->getPwd());
-        $stmt=bindParam(":id",$cliente->getId());
+        $stmt->bindParam(":nombre",$cliente->getNombre());
+        $stmt->bindParam(":apellido",$cliente->getApellido());
+        $stmt->bindParam(":domicilio",$cliente->getDomicilio());
+        $stmt->bindParam(":telefono",$cliente->getTelefono());
+        $stmt->bindParam(":nickname",$cliente->getNickname());
+        $stmt->bindParam(":pwd",$cliente->getPwd());
+        $stmt->bindParam(":id",$cliente->getId());
         return $stmt -> execute();
     }
     //Borrar cliente
