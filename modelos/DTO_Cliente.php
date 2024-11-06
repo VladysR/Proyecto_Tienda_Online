@@ -4,8 +4,8 @@
         private $id;
         private $nombre;
         private $apellido;
-        private $domicilio; // Puede ser null
-        private $telefono; // Puede ser null
+        private $domicilio; // Puede ser null segun la base de datos
+        private $telefono; // Puede ser null segun la base de datos
         private $nickname;
         private $pwd;
 
@@ -18,9 +18,6 @@
             $this->nickname = $nickname;
             $this->pwd = $pwd;
         }
-
-        // Validaciones varias -------------------------------------------------------------
-    
 
         // Setters -------------------------------------------------------------
 

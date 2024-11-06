@@ -1,6 +1,7 @@
 <?php
 require_once("../DAO_Cliente.php");
 
+
 class Controlador_Registro {
 
     private $cliente_DAO;
@@ -17,9 +18,12 @@ class Controlador_Registro {
 
      } else {
 
-        //Mandar que cambios tiene mal -----------------------------
+        //No deberia llegar porque se valida en el controlador de peticiones registro
         header("Location:../vistas/RegistroForm.html");
      } 
 
     }
+
+   
+
 }
