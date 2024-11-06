@@ -34,15 +34,16 @@
             $query = $this->conexion->prepare("SELECT * FROM $this->nombreTabla WHERE id = :id");
             $query->bindParam(":id", $id);
             $query->execute();
-            $result = $query->fetch(PDO::FETCH_ASSOC);
+            $fila = $query->fetch(PDO::FETCH_ASSOC);
+
+            if ($fila) {
+                $producto = new DTO_Producto($fila["nombre"], $fila["descripcion"], $fila["precio"]);
+                $producto->setId($fila["id"]); 
+                return $producto; 
+             } else {
+                 return null; // Si no se encuentra, devolvemos null
+             }
         
-            while ($result->fetch(PDO::FETCH_ASSOC)) {
-
-                $producto = new DTO_Producto($result["nombre"], $result["descripcion"], $result["precio"]);
-                $producto->setId($result["id"]);
-            }
-
-            return $producto;
         }
 
         //GET by name -> Devuelve el objeto producto del name pedido
