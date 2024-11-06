@@ -28,7 +28,7 @@
             return $productos;
         }
 
-        //GET by id -> Devuelve el objeto producto del id pedido
+        //GET by id -> Devuelve el objeto producto del id pedido o null
         public function getProductoById($id){
 
             $query = $this->conexion->prepare("SELECT * FROM $this->nombreTabla WHERE id = :id");
@@ -52,16 +52,15 @@
             $query = $this->conexion->prepare("SELECT * FROM $this->nombreTabla WHERE nombre = :nombre");
             $query->bindParam(":nombre", $nombre);
             $query->execute();
-            $result = $query->fetch(PDO::FETCH_ASSOC);
+            $fila = $query->fetch(PDO::FETCH_ASSOC);
         
-            while ($result->fetch(PDO::FETCH_ASSOC)) {
-
-                $producto = new DTO_Producto($result["nombre"], $result["descripcion"], $result["precio"]);
-                
-                $producto->setId($result["id"]);
-            }
-
-            return $producto;
+            if ($fila) {
+                $producto = new DTO_Producto($fila["nombre"], $fila["descripcion"], $fila["precio"]);
+                $producto->setId($fila["id"]); 
+                return $producto; 
+             } else {
+                 return null; // Si no se encuentra, devolvemos null
+             }
         }
 
         //INSERT -> Retorna T || F si se ha ejecutado correctamente la query
