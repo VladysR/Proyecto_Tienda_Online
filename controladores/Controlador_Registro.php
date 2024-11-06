@@ -1,5 +1,5 @@
 <?php
-require_once("../DAO_Cliente");
+require_once("../DAO_Cliente.php");
 
 class Controlador_Registro {
 

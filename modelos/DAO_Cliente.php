@@ -1,6 +1,6 @@
 <?php
 require_once("Connect.php");
-require_once("DTO_Cliente");
+require_once("DTO_Cliente.php");
 
 class DAO_Cliente{
     private $conexion;
