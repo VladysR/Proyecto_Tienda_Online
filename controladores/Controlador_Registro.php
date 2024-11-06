@@ -10,17 +10,38 @@ class Controlador_Registro {
         $this->cliente_DAO = new DAO_Cliente();
     }
 
+    public function nickname_repetido($cliente){
+
+        $clientes = $this->cliente_DAO->getAllClientes(); 
+
+        foreach ($clientes as $value) {
+            if($value->getNickname() == $cliente->getNickname()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     // Controlador addCliente que recibe un objeto cliente e invoca el DAO, devuelve true si se crea, si no devuelve false.
-    public function controlador_addCliente($cliente) {
+    // Primero comprueba que el nickname no este repetido
+    public function controlador_addCliente($cliente) {        
 
-     if ($this->cliente_DAO->addCliente($cliente)) {
-        header("Location:../vistas/Login.html");
+        if (!$this->nickname_repetido($cliente)) {
 
-     } else {
+            if ($this->cliente_DAO->addCliente($cliente)) {
+                header("Location:../vistas/Login.html");
+        
+             } else {
+        
+                //No deberia llegar porque se valida en el controlador de peticiones registro
+                header("Location:../vistas/RegistroForm.html");
+             } 
 
-        //No deberia llegar porque se valida en el controlador de peticiones registro
-        header("Location:../vistas/RegistroForm.html");
-     } 
+        } else {
+            //Te manda a registro porque el nickname esta repetido
+            header("Location:../vistas/RegistroForm.html");
+        }
 
     }
 

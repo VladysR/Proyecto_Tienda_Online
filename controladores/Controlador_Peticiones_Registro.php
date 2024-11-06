@@ -82,7 +82,7 @@
 
                 } else {
 
-                    $controlador_registro->controlador_addCliente( $cliente );
+                    $controlador_registro->controlador_addCliente( $cliente);
                 }
             
         }
