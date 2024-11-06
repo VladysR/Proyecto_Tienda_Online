@@ -12,7 +12,14 @@ class Controlador_Registro {
     // Controlador addCliente que recibe un objeto cliente e invoca el DAO, devuelve true si se crea, si no devuelve false.
     public function controlador_addCliente($cliente) {
 
-     return $this->cliente_DAO->addCliente($cliente);
+     if ($this->cliente_DAO->addCliente($cliente)) {
+        header("Location:../vistas/Login.html");
+
+     } else {
+
+        //Mandar que cambios tiene mal -----------------------------
+        header("Location:../vistas/RegistroForm.html");
+     } 
 
     }
 }

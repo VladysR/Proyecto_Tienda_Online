@@ -13,13 +13,14 @@
 
             $cliente = new DTO_Cliente($_POST["nombre"], $_POST["apellido"], $_POST["domicilio"], $_POST["telefono"], $_POST["nickname"], $_POST["pwd"]);
 
-            ($controlador_registro->controlador_addCliente( $cliente )) ? header("Location:../vistas/Login.html") : header("Location:../vistas/Registro_FORM.html");
+            $controlador_registro->controlador_addCliente( $cliente );
 
             
             
         }
 
     } else {
+        
         header("Location:../vistas/Registro_FORM.html");
     }
 
