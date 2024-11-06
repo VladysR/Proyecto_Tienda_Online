@@ -11,11 +11,8 @@ class Controlador_Registro {
 
     // Controlador addCliente que recibe un objeto cliente e invoca el DAO, devuelve true si se crea, si no devuelve false.
     public function controlador_addCliente($cliente) {
-        if ($this->cliente_DAO->addCliente($cliente)){
 
-            return true;
-        } 
-        
-        return false;
+     return $this->cliente_DAO->addCliente($cliente);
+
     }
 }
