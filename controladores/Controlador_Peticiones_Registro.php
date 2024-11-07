@@ -83,6 +83,7 @@
                 } else {
 
                     $controlador_registro->controlador_addCliente( $cliente);
+                    header("Location:../vistas/Login.html");
                 }
             
         }

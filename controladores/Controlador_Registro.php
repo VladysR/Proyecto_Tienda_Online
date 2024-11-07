@@ -10,17 +10,15 @@ class Controlador_Registro {
         $this->cliente_DAO = new DAO_Cliente();
     }
 
-    public function nickname_repetido($cliente){
+    public function nickname_repetido($nickname){
 
-        $clientes = $this->cliente_DAO->getAllClientes(); 
-
-        foreach ($clientes as $value) {
-            if($value->getNickname() == $cliente->getNickname()) {
-                return true;
-            }
+        if($this->cliente_DAO->getClienteByNickname($nickname) === null){
+            return false;
+        } else {
+            return true;
         }
 
-        return false;
+        
     }
 
     // Controlador addCliente que recibe un objeto cliente e invoca el DAO, devuelve true si se crea, si no devuelve false.
