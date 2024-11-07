@@ -14,8 +14,7 @@ class DTO_Producto{
         $this->descripcion = $descripcion;
         $this->precio = $precio;
     }
-    // Validaciones varias -------------------------------------------------------------
-    
+
 
      // Setters -------------------------------------------------------------
 

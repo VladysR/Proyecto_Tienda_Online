@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Log in</title>
+    <link rel="stylesheet" href="Login_FORM.css">
+</head>
+
+<body>
+    
+    <section class="formulario">
+       
+        <form action="../controladores/Controlador_Peticiones_Login.php" method="post">
+
+            <label for="usuario"></label> 
+            <input type="text" name="usuario" class="escribir" placeholder="User" required>
+
+            <label for="password"></label> 
+            <input type="password" name="password" class="escribir" placeholder="Password" required>
+
+            <!-- Recordar no es funcional aun -->
+            <p class="recordar"> 
+            <label for="recordar" class="recordarLabel">Recordar contraseña</label>
+            <input type="checkbox" name="recordar_contraseña" id="checkbox1">
+            </p>
+
+            <p><a href="Registro_FORM.html">Press to sign in</a></p>
+
+            <p class="botones">
+                <label>
+                    <input type="submit" value="Enviar">
+                </label>
+
+                <label>
+                    <input type="reset" value="Borrar">
+                </label>
+            </p>
+        </form>
+    </section>
+</body>
+</html>

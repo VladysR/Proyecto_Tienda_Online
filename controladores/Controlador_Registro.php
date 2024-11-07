@@ -28,17 +28,17 @@ class Controlador_Registro {
         if (!$this->nickname_repetido($cliente)) {
 
             if ($this->cliente_DAO->addCliente($cliente)) {
-                header("Location:../vistas/Login.html");
+                header("Location:../vistas/Login_FORM.html");
         
              } else {
         
                 //No deberia llegar porque se valida en el controlador de peticiones registro
-                header("Location:../vistas/RegistroForm.html");
+                header("Location:../vistas/Registro_FORM.html");
              } 
 
         } else {
             //Te manda a registro porque el nickname esta repetido
-            header("Location:../vistas/RegistroForm.html");
+            header("Location:../vistas/Registro_FORM.html");
         }
 
     }
