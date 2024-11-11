@@ -158,16 +158,26 @@
   main{
     height: 75dvh;
     width: 100%;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 
-                        "slider slider aside"
-                        "slider slider aside"
-                        "slider slider aside";
-    gap: 10px;
-    margin: 10px 0px;
-    padding: 2.4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main table {
+    width: 100%;
+  }
+
+  main table th{
+    border: solid 2px black;
+  }
+
+  main table td{
+    border: solid 2px black;
+    text-align: center;
+  }
+
+  main table .carrito{
+    width: 10%;
   }
 
   
@@ -265,3 +275,5 @@ hr{
  .container-main-quienSomos p {
   text-align: justify;
  }
+
+ 

@@ -47,6 +47,7 @@ class DAO_Cliente{
         $stmt->execute();
         $resultados=$stmt->fetchall(PDO::FETCH_ASSOC);
         $clientes=[];
+        
         foreach($resultados as $fila) {
             $cliente = new DTO_Cliente($fila["nombre"], $fila["apellido"], $fila["domicilio"], $fila["telefono"], $fila["nickname"], $fila["pwd"]);
             $cliente->setId($fila["id"]);

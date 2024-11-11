@@ -15,15 +15,16 @@
     
                 $query = $this->conexion->prepare("SELECT * FROM $this->nombreTabla");
                 $query->execute();
-                $result = $query->fetch(PDO::FETCH_ASSOC);
+                $result = $query->fetchall(PDO::FETCH_ASSOC);
                 $productos = [];
     
-                while ($result->fetch(PDO::FETCH_ASSOC)) {
-    
-                    $producto = new DTO_Producto($result["nombre"], $result["descripcion"], $result["precio"]);
-    
+                foreach ($result as $fila) {
+                    $producto = new DTO_Producto($fila["nombre"], $fila["descripcion"], $fila["precio"]);
+                    $producto->setId($fila["id"]);
+                    $producto->setCliente_id($fila["cliente_id"]);
                     $productos[] = $producto;
                 }
+    
 
             return $productos;
         }
@@ -39,6 +40,7 @@
             if ($fila) {
                 $producto = new DTO_Producto($fila["nombre"], $fila["descripcion"], $fila["precio"]);
                 $producto->setId($fila["id"]); 
+                $producto->setCliente_id($fila["cliente_id"]);
                 return $producto; 
              } else {
                  return null; // Si no se encuentra, devolvemos null
