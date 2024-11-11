@@ -18,7 +18,7 @@
         }
     }
 
-    function validate_telefono($numero){
+    function validate_telefono($numero){                                                                            //ESTA VALIDACION NO FUNCIONA
         // Solo 9 digitos
         $rgx = "/^\d{9}$/";
         
@@ -60,23 +60,15 @@
 
         if ($action === "Registrar"){
 
-            // $cliente = new DTO_Cliente(
-            //     validate_Nombre_Apellido($_POST["nombre"]), 
-            //     validate_Nombre_Apellido($_POST["apellido"]), 
-            //     $_POST["domicilio"], // Hay que ver que hacer con esto
-            //     validate_telefono($_POST["telefono"]), 
-            //     validate_nickname($_POST["nickname"]), 
-            //     validate_pwd($_POST["pwd"])
-            // );
             $cliente = new DTO_Cliente(
-                $_POST["nombre"], 
-                $_POST["apellido"], 
-                $_POST["domicilio"],
-                $_POST["telefono"], 
-                $_POST["nickname"], 
-                $_POST["pwd"]
+                validate_Nombre_Apellido($_POST["nombre"]), 
+                validate_Nombre_Apellido($_POST["apellido"]), 
+                $_POST["domicilio"], // Hay que ver que hacer con esto
+                validate_telefono($_POST["telefono"]), 
+                validate_nickname($_POST["nickname"]), 
+                validate_pwd($_POST["pwd"])
             );
-
+         
                 if( // Si alguna de las propiedades es null, vuelve al registro Y MOSTRARA en cual esta el error(FALTA TERMINAR)
                     $cliente->getNombre() === null ||
                     $cliente->getApellido() === null ||

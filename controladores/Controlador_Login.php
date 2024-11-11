@@ -1,5 +1,5 @@
 <?php
-require_once("../DAO_Cliente.php");
+require_once("../modelos/DAO_Cliente.php");
 
 class Controlador_Login{
     private $cliente_DAO;
@@ -25,12 +25,14 @@ class Controlador_Login{
     //Controlador entrar recibe nickname y contraseña, comprueba si existe el nickname,si true comprueba si la contraseña existe si false hace mirror, si la contraseña concide pasa al index sino hace mirror.
 
     public function controlador_entrar($nickname,$pwd){
-        if(!$this->nickname_no_existe($nickname)){
-            if(!$this->pwd_no_coincide
+        if($this->nickname_no_existe($nickname)){
+            if($this->pwd_no_coincide
             ($nickname,$pwd)
             ){
                 header("Location:../vistas/index.html");
+
             }else{
+
                 header("Location:../vistas/Login_FORM.html");
             }
         }else{
