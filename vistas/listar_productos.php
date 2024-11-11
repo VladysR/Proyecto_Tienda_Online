@@ -6,7 +6,7 @@
   <title>Tienda</title>
   <link rel="stylesheet" href="listar_Prodcutos.css">
   <?php 
-  session_start();
+  // session_start();
   require_once("../modelos/DTO_Producto.php");
   require_once("../controladores/Controlador_List.php");
   ?>
@@ -17,17 +17,25 @@
     <h1>NEW CROSS</h1>
 
    
-      <section class="menu-container">
-        <form action="../controladores/Controlador_Peticiones_Index.php" method="post">
+    <section class="menu-container">
+        <form action="../controladores/Controlador_Peticiones_Index.php" method="POST">
         <ul class="menu">
           
-          <li class="element"><input name="accion" value="AñadirProducto"></input></li>
+          <li class="element">
+            <input type="submit" name="accion" value="AñadirProducto"></input>
+          </li>
 
-          <li class="element" id="element-productos"><input name="accion" value="ListarProductos"></input></li>
+          <li class="element" id="element-productos">
+            <input type="submit" name="accion" value="ListarProductos"></input>
+          </li>
 
-          <li class="element"><input name="accion" value="ModificarProducto"></input></li>
+          <li class="element">
+            <input  type="submit" name="accion" value="ModificarProducto"></input>
+          </li>
 
-          <li class="element"><input name="accion" value="EliminarProducto"></input></li>
+          <li class="element">
+            <input type="submit" name="accion" value="EliminarProducto"></input>
+          </li>
         </ul>
       </form>
       </section>

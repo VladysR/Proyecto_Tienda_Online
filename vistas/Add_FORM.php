@@ -12,17 +12,25 @@
     <h1>NEW CROSS</h1>
 
    
-      <section class="menu-container">
-        <form action="../controladores/Controlador_Peticiones_Add.php" method="post">
+    <section class="menu-container">
+        <form action="../controladores/Controlador_Peticiones_Index.php" method="POST">
         <ul class="menu">
           
-          <li class="element"><input type="submit" name="add" value="AñadirProducto"></input></li>
+          <li class="element">
+            <input type="submit" name="accion" value="AñadirProducto"></input>
+          </li>
 
-          <li class="element" id="element-productos"><input type="submit" name="list" value="ListarProductos"></input></li>
+          <li class="element" id="element-productos">
+            <input type="submit" name="accion" value="ListarProductos"></input>
+          </li>
 
-          <li class="element"><input type="submit" name="update" value="ModificarProducto"></input></li>
+          <li class="element">
+            <input  type="submit" name="accion" value="ModificarProducto"></input>
+          </li>
 
-          <li class="element"><input type="submit" name="delete" value="EliminarProducto"></input></li>
+          <li class="element">
+            <input type="submit" name="accion" value="EliminarProducto"></input>
+          </li>
         </ul>
       </form>
       </section>
@@ -33,16 +41,16 @@
     
   <form action="../controladores/Controlador_Peticiones_Add.php" method="POST">
 
-<label for="nombre"><input type="text" name="nombre" placeholder="Nombre" required></label>
+<label for="nombre"><input type="text" name="nombre" placeholder="Nombre" required></input></label>
 
-<label for="apellido"><input type="text" name="descripcion" placeholder="Descripcion" required></label>
+<label for="descripcion"><textarea name="descripcion" id="descripcion" placeholder="Descripcion" rows="3" required></textarea></label>
 
-<label for="domicilio"><input type="number" step="0.01" name="precio" placeholder="Precio" required></label>
+<label for="precio"><input type="number" step="0.01" name="precio" placeholder="Precio" required></input></label>
 
-<label>
-    <input type="submit" value="Añadir" name="add" id="button">
-    <input type="reset" value="Limpiar">
-</label>
+<div class="buttons">
+    <input type="submit" value="Añadir" name="add" class="button"></input>
+    <input type="reset" value="Limpiar" class="button"></input>
+</div>
 </form>
    
 
