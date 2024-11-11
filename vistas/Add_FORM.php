@@ -13,7 +13,7 @@
 
    
       <section class="menu-container">
-        <form action="../controladores/Controlador_Peticiones_Index.php" method="post">
+        <form action="../controladores/Controlador_Peticiones_Add.php" method="post">
         <ul class="menu">
           
           <li class="element"><input type="submit" name="add" value="AñadirProducto"></input></li>
@@ -31,6 +31,19 @@
 
   <main class="container-main">
     
+  <form action="../controladores/Controlador_Peticiones_Add.php" method="POST">
+
+<label for="nombre"><input type="text" name="nombre" placeholder="Nombre" required></label>
+
+<label for="apellido"><input type="text" name="descripcion" placeholder="Descripcion" required></label>
+
+<label for="domicilio"><input type="number" step="0.01" name="precio" placeholder="Precio" required></label>
+
+<label>
+    <input type="submit" value="Añadir" name="add" id="button">
+    <input type="reset" value="Limpiar">
+</label>
+</form>
    
 
   </main>
