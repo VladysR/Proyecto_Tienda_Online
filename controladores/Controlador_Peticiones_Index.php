@@ -1,22 +1,20 @@
 <?php
-require_once("Controlador_List.php");
+session_start();
 
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-   
-    $list = new Controlador_List();
-   
+if ($_SERVER["REQUEST_METHOD"] === "POST") {   
 
-    $action = $_POST["accion"];
+    
 
-    switch ($action) {
+    switch ($_POST["accion"]) 
+    {
         case 'AñadirProducto':
             header('Location:../vistas/Add_FORM.php');
             break;
 
         case 'ListarProductos':
-            $list->listAll();
+            header("Location:../vistas/listar_Productos.php");
             break;
 
         case 'ModificarProdcuto':

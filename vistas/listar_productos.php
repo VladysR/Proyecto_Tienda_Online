@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda</title>
   <link rel="stylesheet" href="listar_Prodcutos.css">
+  <?php 
+  session_start();
+  require_once("../modelos/DTO_Producto.php");
+  require_once("../controladores/Controlador_List.php");
+  ?>
 </head>
 <body>
   <header>
@@ -16,13 +21,13 @@
         <form action="../controladores/Controlador_Peticiones_Index.php" method="post">
         <ul class="menu">
           
-          <li class="element"><input name="add" value="AñadirProducto"></input></li>
+          <li class="element"><input name="accion" value="AñadirProducto"></input></li>
 
-          <li class="element" id="element-productos"><input name="list" value="ListarProductos"></input></li>
+          <li class="element" id="element-productos"><input name="accion" value="ListarProductos"></input></li>
 
-          <li class="element"><input name="update" value="ModificarProducto"></input></li>
+          <li class="element"><input name="accion" value="ModificarProducto"></input></li>
 
-          <li class="element"><input name="delete" value="EliminarProducto"></input></li>
+          <li class="element"><input name="accion" value="EliminarProducto"></input></li>
         </ul>
       </form>
       </section>
@@ -31,7 +36,29 @@
 
   <main class="container-main">
     
-   
+    <table>
+      <tr> <th>ID</th><th>Nombre</th> <th>Descripcion</th> <th>Precio</th> <th>Añadir a carrito</th></tr>
+      <?php 
+
+      $controlador_list = new Controlador_List();
+      $productos = $controlador_list->get_list();
+      
+       foreach ($productos as $producto) {
+
+        if ($producto->getCliente_id() == null) {
+        print "<tr>";
+        print "<td>" . $producto->getId() . "</td>";
+        print "<td>" . $producto->getNombre() . "</td>";
+        print "<td>" . $producto->getDescripcion() . "</td>";
+        print "<td>" . $producto->getPrecio() . "</td>";
+        print "<td class=\"carrito\"> + </td>";
+        print "</tr>";
+        }
+    }
+      
+      
+      ?>
+    </table>
 
   </main>
 
