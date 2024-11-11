@@ -14,7 +14,7 @@ class Connect{
         if(self::$conexion === null){
 
             try {
-                self::$conexion = new PDO("mysql:host=" . self::$host . ":dbname=" . self::$name_database, self::$user, self::$pwd);    
+                self::$conexion = new PDO("mysql:host=" . self::$host . ";dbname=" . self::$name_database, self::$user, self::$pwd);    
 
                 self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

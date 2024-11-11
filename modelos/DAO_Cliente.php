@@ -57,7 +57,8 @@ class DAO_Cliente{
     //Añadir cliente
     //Devuelve booleano
     public function addCliente($cliente){
-        $stmt=$this->conexion->prepare("INSERT INTO $this->nomTabla (nombre, apellido, domicilio, telefono, nickname, pwd) VALUES(:nombre, :apellido, :domicilio, :telefono, :nickname, :pwd)");
+        $stmt=$this->conexion->prepare("INSERT INTO $this->nomTabla (nombre, apellido, domicilio, telefono, nickname, password) VALUES(:nombre, :apellido, :domicilio, :telefono, :nickname, :pwd)");
+       
         $stmt->bindParam(":nombre",$cliente->getNombre());
         $stmt->bindParam(":apellido",$cliente->getApellido());
         $stmt->bindParam(":domicilio",$cliente->getDomicilio());

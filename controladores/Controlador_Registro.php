@@ -1,5 +1,5 @@
 <?php
-require_once("../DAO_Cliente.php");
+require_once("../modelos/DAO_Cliente.php");
 
 
 class Controlador_Registro {
@@ -25,7 +25,7 @@ class Controlador_Registro {
     // Primero comprueba que el nickname no este repetido
     public function controlador_addCliente($cliente) {        
 
-        if (!$this->nickname_repetido($cliente)) {
+        if (!$this->nickname_repetido($cliente->getNickname())) {
 
             if ($this->cliente_DAO->addCliente($cliente)) {
                 header("Location:../vistas/Login_FORM.html");

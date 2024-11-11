@@ -1,7 +1,7 @@
 <?php
 
     require_once("Controlador_Registro.php");
-    require_once("DTO_Cliente.php");
+    require_once("../modelos/DTO_Cliente.php");
 
     $controlador_registro = new Controlador_Registro();
 
@@ -54,19 +54,27 @@
 
     // COMIENZO DEL CONTROLADOR
 
-    if($_SERVER["METHOD"] === $_POST){
+    // if($_SERVER["METHOD"] == $_POST){
 
         $action = $_POST["registrar"]; 
 
-        if ($action === "registrar"){
+        if ($action === "Registrar"){
 
+            // $cliente = new DTO_Cliente(
+            //     validate_Nombre_Apellido($_POST["nombre"]), 
+            //     validate_Nombre_Apellido($_POST["apellido"]), 
+            //     $_POST["domicilio"], // Hay que ver que hacer con esto
+            //     validate_telefono($_POST["telefono"]), 
+            //     validate_nickname($_POST["nickname"]), 
+            //     validate_pwd($_POST["pwd"])
+            // );
             $cliente = new DTO_Cliente(
-                validate_Nombre_Apellido($_POST["nombre"]), 
-                validate_Nombre_Apellido($_POST["apellido"]), 
-                $_POST["domicilio"], // Hay que ver que hacer con esto
-                validate_telefono($_POST["telefono"]), 
-                validate_nickname($_POST["nickname"]), 
-                validate_pwd($_POST["pwd"])
+                $_POST["nombre"], 
+                $_POST["apellido"], 
+                $_POST["domicilio"],
+                $_POST["telefono"], 
+                $_POST["nickname"], 
+                $_POST["pwd"]
             );
 
                 if( // Si alguna de las propiedades es null, vuelve al registro Y MOSTRARA en cual esta el error(FALTA TERMINAR)
@@ -88,9 +96,9 @@
             
         }
 
-    } else {
+    // } else {
 
-        header("Location:../vistas/Registro_FORM.html");
-    }
+    //     header("Location:../vistas/Login_FORM.html");
+    // }
 
     
