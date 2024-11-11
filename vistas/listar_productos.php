@@ -4,27 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda</title>
-  <link rel="stylesheet" href="listar_productos.css">
+  <link rel="stylesheet" href="listar_Prodcutos.css">
 </head>
 <body>
   <header>
     </article>
     <h1>NEW CROSS</h1>
 
-    <section class="menu-container">
-      <ul class="menu">
-       <li class="element"><a href="index.html">Añadir producto</a></li>
-        <li class="element" id="element-productos"><a href="">Listar productos</a>
-          <!-- <ul class="submenu">
-            <li class="subproducto"><a href="Camisetas.html">Camisetas</a></li>
-            <li class="subproducto1"><a href="Zapatillas.html">Zapatillas</a></li>
-            <li class="subproducto2"><a href="Gorras.html">Gorras</a></li>
-          </ul> -->
-        </li>
-        <li class="element"><a href="QuienesSomos.html">Modificar producto</a></li>
-        <li class="element"><a href="#nuestraUbicacion">Eliminar producto</a></li>
-      </ul>
-    </section>
+   
+      <section class="menu-container">
+        <form action="../controladores/Controlador_Peticiones_Index.php" method="post">
+        <ul class="menu">
+          
+          <li class="element"><input name="add" value="AñadirProducto"></input></li>
+
+          <li class="element" id="element-productos"><input name="list" value="ListarProductos"></input></li>
+
+          <li class="element"><input name="update" value="ModificarProducto"></input></li>
+
+          <li class="element"><input name="delete" value="EliminarProducto"></input></li>
+        </ul>
+      </form>
+      </section>
+   
   </header>
 
   <main class="container-main">
