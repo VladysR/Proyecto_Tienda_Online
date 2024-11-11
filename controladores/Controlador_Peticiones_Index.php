@@ -2,7 +2,7 @@
 require_once("Controlador_List.php");
 
 
-if ($_SERVER["REQUEST_METHOD" === "POST"]) {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
    
     $list = new Controlador_List();
@@ -12,19 +12,19 @@ if ($_SERVER["REQUEST_METHOD" === "POST"]) {
 
     switch ($action) {
         case 'AñadirProducto':
-            header('Location:Add_FORM.html');
+            header('Location:../vistas/Add_FORM.php');
             break;
 
         case 'ListarProductos':
-            //Recibe producto para listar
+            $list->listAll();
             break;
 
         case 'ModificarProdcuto':
-            header('Location:Modificar_FORM.html');
+            header('Location:../vistas/Modificar_FORM.php');
             break;
 
         case 'EliminarProducto':
-            header('Location:Eliminar_FORM.html');
+            header('Location:../vistas/Eliminar_FORM.php');
             break;
         
         

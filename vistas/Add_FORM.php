@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="Add_FORM.css">
 </head>
 <body>
   <header>
@@ -13,16 +13,16 @@
 
    
       <section class="menu-container">
-        <form action="../controladores/Controlador_Peticiones_Index.php" method="POST">
+        <form action="../controladores/Controlador_Peticiones_Index.php" method="post">
         <ul class="menu">
           
-          <li class="element"><input type="submit" name="accion" value="AñadirProducto"></input></li>
+          <li class="element"><input type="submit" name="add" value="AñadirProducto"></input></li>
 
-          <li class="element" id="element-productos"><input type="submit" name="accion" value="ListarProductos"></input></li>
+          <li class="element" id="element-productos"><input type="submit" name="list" value="ListarProductos"></input></li>
 
-          <li class="element"><input  type="submit" name="accion" value="ModificarProducto"></input></li>
+          <li class="element"><input type="submit" name="update" value="ModificarProducto"></input></li>
 
-          <li class="element"><input type="submit" name="accion" value="EliminarProducto"></input></li>
+          <li class="element"><input type="submit" name="delete" value="EliminarProducto"></input></li>
         </ul>
       </form>
       </section>
