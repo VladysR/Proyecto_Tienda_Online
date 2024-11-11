@@ -54,7 +54,7 @@
 
     // COMIENZO DEL CONTROLADOR
 
-    // if($_SERVER["METHOD"] == $_POST){
+    if($_SERVER["REQUEST_METHOD"] === "POST"){
 
         $action = $_POST["registrar"]; 
 
@@ -88,9 +88,9 @@
             
         }
 
-    // } else {
+    } else {
 
-    //     header("Location:../vistas/Login_FORM.html");
-    // }
+        header("Location:../vistas/Login_FORM.html");
+    }
 
     
