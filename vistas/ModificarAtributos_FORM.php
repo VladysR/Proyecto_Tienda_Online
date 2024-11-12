@@ -43,16 +43,22 @@
   <main class="container-main">
     <h2>Actualiza el producto</h2>
     
-    <form action="" method="POST">
+    <form action="../controladores/Controlador_Peticiones_Modificar.php" method="POST">
 
-        <label for="nombre"><input type="text" name="nombre" placeholder="Nombre" required></input></label>
 
-        <label for="descripcion"><textarea name="descripcion" id="descripcion" placeholder="Descripcion" rows="3" required></textarea></label>
+    <!--ÑAPONCIO QUE FLIPAS HAY QUE PENSAR ALGO-->
+      <label for="id" style="display: none;"><input type="number" name="id" style="display: none;" value="<?php print($_GET["id"])?>"> </label>
+<!--ÑAPONCIO QUE FLIPAS HAY QUE PENSAR ALGO-->
+
+
+        <label for="nombre"><input type="text" name="nombre" placeholder="Nombre" value="<?php print($_GET["nombre"])?>" required></input></label>
+
+        <label for="descripcion"><textarea name="descripcion" id="descripcion" placeholder="Descripcion" rows="3"  required><?php print($_GET["descripcion"])?></textarea></label>
     
-        <label for="precio"><input type="number" step="0.01" name="precio" placeholder="Precio" required></input></label>
+        <label for="precio"><input type="number" step="0.01" name="precio" placeholder="Precio" value="<?php print($_GET["precio"])?>" required></input></label>
     
         <div class="buttons">
-            <input type="submit" value="ModificarAttr" name="add" class="button"></input>
+            <input type="submit" value="ModificarAttr" name="update" class="button"></input>
             <input type="reset" value="Limpiar" class="button"></input>
         </div>
      
