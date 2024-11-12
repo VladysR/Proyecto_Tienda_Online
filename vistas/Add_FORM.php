@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda</title>
+  <link rel="stylesheet" href="general.css">
   <link rel="stylesheet" href="Add_FORM.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
 </head>
 <body>
   <header>
