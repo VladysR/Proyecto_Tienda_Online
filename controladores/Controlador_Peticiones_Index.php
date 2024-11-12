@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location:../vistas/listar_Productos.php");
             break;
 
-        case 'ModificarProdcuto':
+        case 'ModificarProducto':
             header('Location:../vistas/Modificar_FORM.html');
             break;
 
