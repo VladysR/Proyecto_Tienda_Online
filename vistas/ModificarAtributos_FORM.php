@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update</title>
+    <title>Update Atributos</title>
     <link rel="stylesheet" href="cssGeneral/general.css">
-    <link rel="stylesheet" href="Modificar_FORM.css">
+    <link rel="stylesheet" href="ModificarAtributos_FORM.css">
     <link rel="stylesheet" href="cssGeneral/header.css">
     <link rel="stylesheet" href="cssGeneral/footer.css">
 </head>
@@ -41,16 +41,20 @@
   </header>
   <!-- main -->
   <main class="container-main">
-    <h2>Introduce el ID a modificar</h2>
+    <h2>Actualiza el producto</h2>
     
-    <form action="../controladores/Controlador_Peticiones_Modificar.php" method="POST">
-        <label for="id"><input type="number" name="id" placeholder="ID" step="1"  required></input></label>
-        
+    <form action="" method="POST">
+
+        <label for="nombre"><input type="text" name="nombre" placeholder="Nombre" required></input></label>
+
+        <label for="descripcion"><textarea name="descripcion" id="descripcion" placeholder="Descripcion" rows="3" required></textarea></label>
+    
+        <label for="precio"><input type="number" step="0.01" name="precio" placeholder="Precio" required></input></label>
+    
         <div class="buttons">
-            <input type="submit" value="Modificar" name="update" class="button"></input>
+            <input type="submit" value="ModificarAttr" name="add" class="button"></input>
             <input type="reset" value="Limpiar" class="button"></input>
         </div>
-  </form>
      
   
     </main>
