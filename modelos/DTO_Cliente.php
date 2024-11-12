@@ -75,7 +75,7 @@
             return $this->nickname;
         }
 
-        public function getpwd() {
+        public function getPwd() {
             return $this->pwd;
         }
     }

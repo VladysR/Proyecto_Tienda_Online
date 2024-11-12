@@ -6,29 +6,25 @@ class Controlador_Login{
     public function __construct() {
         $this->cliente_DAO = new DAO_Cliente();
     }
-    public function nickname_no_existe($nickname){
-        if ($this->cliente_DAO->getClienteByNickname
-        ($nickname) === null) {
+    public function nickname_existe($nickname){
+        if ($this->cliente_DAO->getClienteByNickname($nickname) === null) {
             return false;
         }else{
             return true;
         }
     }
-    public function pwd_no_coincide($nickname,$pwd){
-        if($this->cliente_DAO->getClienteByNickname
-        ($nickname)->getpwd() === $pwd){
-            return false;
-        }else{
+    public function pwd_coincide($nickname,$pwd){
+        if($this->cliente_DAO->getClienteByNickname($nickname)->getPwd() == $pwd){
             return true;
+        }else{
+            return false;
         }
     }
     //Controlador entrar recibe nickname y contraseña, comprueba si existe el nickname,si true comprueba si la contraseña existe si false hace mirror, si la contraseña concide pasa al index sino hace mirror.
 
     public function controlador_entrar($nickname,$pwd){
-        if($this->nickname_no_existe($nickname)){
-            if($this->pwd_no_coincide
-            ($nickname,$pwd)
-            ){
+        if($this->nickname_existe($nickname)){
+            if($this->pwd_coincide($nickname,$pwd)){
                 header("Location:../vistas/index.html");
 
             }else{

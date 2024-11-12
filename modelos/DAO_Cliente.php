@@ -33,7 +33,7 @@ class DAO_Cliente{
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($fila) {
-            $cliente = new DTO_Cliente($fila["nombre"], $fila["apellido"], $fila["domicilio"], $fila["telefono"], $fila["nickname"], $fila["pwd"]);
+            $cliente = new DTO_Cliente($fila["nombre"], $fila["apellido"], $fila["domicilio"], $fila["telefono"], $fila["nickname"], $fila["password"]);
             $cliente->setId($fila["id"]); 
             return $cliente;
         } else {
