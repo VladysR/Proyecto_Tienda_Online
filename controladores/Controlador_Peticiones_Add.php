@@ -24,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
         $producto->getPrecio() === null ||
         $producto->getDescripcion() === null
     ){
-        header("Location:../vistas/Add_FORM.php");
+        header("Location:../vistas/Add_FORM.html");
     }else {
         $controlador_add->controlador_addProducto($producto);
-        header("Location:../vistas/Add_FORM.php");
+        header("Location:../vistas/Add_FORM.html");
     }
-} header("Location:../vistas/Add_FORM.php");
+} header("Location:../vistas/Add_FORM.html");

@@ -17,8 +17,8 @@ class Controlador_Add{
         if (!$this->nombre_repetido($producto->getNombre())){ if ($this->producto_DAO->addProducto($producto)) {
             header("Location:../vistas/index.html");
         }else{
-            header("Location:../vistas/Add_FORM.php");}
+            header("Location:../vistas/Add_FORM.html");}
     }else    {
-        header("Location:../vistas/Add_FORM.php");}
+        header("Location:../vistas/Add_FORM.html");}
     }
 }
