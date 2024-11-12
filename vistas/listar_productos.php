@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda</title>
-  <link rel="stylesheet" href="general.css">
+  <link rel="stylesheet" href="cssGeneral/general.css">
   <link rel="stylesheet" href="listar_Prodcutos.css">
-  <link rel="stylesheet" href="header.css">
-  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="cssGeneral/header.css">
+  <link rel="stylesheet" href="cssGeneral/footer.css">
   <?php 
   // session_start();
   require_once("../modelos/DTO_Producto.php");

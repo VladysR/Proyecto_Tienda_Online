@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete</title>
-    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="cssGeneral/general.css">
     <link rel="stylesheet" href="Eliminar_FORM.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="cssGeneral/header.css">
+    <link rel="stylesheet" href="cssGeneral/footer.css">
 </head>
 <body>
     <header>
@@ -45,12 +45,12 @@
     <h2>Eliminar producto por ID</h2>
     <p>Si tiene dudas del ID, consulte la lista de productos.</p>
     
-    <form action="../controladores/Controlador_Peticiones_Add.php" method="POST">
+    <form action="../controladores/Controlador_Peticiones_Eliminar.php" method="POST">
   
         <label for="id"><input type="number" name="id" placeholder="ID" step="1"  required></input></label>
         
         <div class="buttons">
-            <input type="submit" value="Añadir" name="add" class="button"></input>
+            <input type="submit" value="Eliminar" name="add" class="button"></input>
             <input type="reset" value="Limpiar" class="button"></input>
         </div>
     </form>
