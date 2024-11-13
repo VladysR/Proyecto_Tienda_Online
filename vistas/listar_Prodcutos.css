@@ -10,14 +10,16 @@
 
   main table {
     width: 100%;
+    backdrop-filter: blur(10px);
+    color: white;
   }
 
   main table th{
-    border: solid 2px black;
+    border: solid 2px white;
   }
 
   main table td{
-    border: solid 2px black;
+    border: solid 2px white;
     text-align: center;
   }
 

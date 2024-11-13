@@ -14,7 +14,7 @@ class Controlador_Eliminar{
 
         if($this->producto_DAO->getProductoById($id) === null){
 
-            header('Location:../vistas/Eliminar_FORM.php');
+            header('Location:../vistas/Eliminar_FORM.php?aviso=Producto con ese id no existe');
 
         } else {
 

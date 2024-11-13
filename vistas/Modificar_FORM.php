@@ -53,6 +53,8 @@
     
     <form action="../controladores/Controlador_Peticiones_Modificar_Id.php" method="POST">
         <label for="id"><input type="number" name="id" placeholder="ID" step="1"  required></input></label>
+
+        <?php isset($_GET['aviso']) ? print "<p style=\"color: red;\">".$_GET['aviso']."</p>" : '' ;?>
         
         <div class="buttons">
             <input type="submit" value="Modificar" name="update" class="button"></input>

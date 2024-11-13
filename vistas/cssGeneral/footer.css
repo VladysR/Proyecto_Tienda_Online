@@ -5,11 +5,12 @@ a{
   
   footer{
     width: 95%;
-    background-color: black;
+    /* background-color: black; */
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     color: white;
     padding: 10px;
+    backdrop-filter: blur(10px);
   }
   .footer-1{
     display: flex;
