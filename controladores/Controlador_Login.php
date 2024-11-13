@@ -32,10 +32,10 @@ class Controlador_Login{
 
             }else{
 
-                header("Location:../vistas/Login_FORM.html");
+                header("Location:../vistas/Login_FORM.php?nickname=$nickname&pwd=Password incorrecta");
             }
         }else{
-            header("Location:../vistas/Login_FORM.html");
+            header("Location:../vistas/Login_FORM.php?nickname=Nickname no existe");
         }
     }
 }

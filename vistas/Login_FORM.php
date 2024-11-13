@@ -14,10 +14,10 @@
         <form action="../controladores/Controlador_Peticiones_Login.php" method="POST">
 
             <label for="usuario"></label> 
-            <input type="text" name="usuario" class="escribir" placeholder="User" required>
+            <input type="text" name="usuario" class="escribir" placeholder="<?php isset($_GET['nickname']) ? print $_GET['nickname'] : print 'Nickname' ?>" required>
 
             <label for="password"></label> 
-            <input type="password" name="password" class="escribir" placeholder="Password" required>
+            <input type="password" name="password" class="escribir" placeholder="<?php isset($_GET['pwd']) ? print $_GET['pwd'] : print 'Password' ?>" required>
 
             <!-- Recordar no es funcional aun -->
             <p class="recordar"> 

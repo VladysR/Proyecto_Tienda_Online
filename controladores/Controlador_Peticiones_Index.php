@@ -27,12 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         case 'cerrarSesion':
             session_destroy();
-            header('Location:../vistas/login_FORM.html');
+            header('Location:../vistas/login_FORM.php');
             break;
         
         
     }
     
 } else {
-    header("Location:../vistas/index.html");
+    header("Location:../vistas/index.php");
 }

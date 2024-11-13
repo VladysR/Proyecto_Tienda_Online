@@ -96,14 +96,14 @@
                 } else {
 
                     $controlador_registro->controlador_addCliente( $cliente);
-                    header("Location:../vistas/Login_FORM.html");
+                    header("Location:../vistas/Login_FORM.php");
                 }
             
         }
 
     } else {
 
-        header("Location:../vistas/Login_FORM.html");
+        header("Location:../vistas/Login_FORM.php");
     }
 
     
