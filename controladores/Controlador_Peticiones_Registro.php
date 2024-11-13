@@ -77,7 +77,7 @@
                     $cliente->getNickname() === null ||
                     $cliente->getpwd() === null
                     ){
-
+                        //AVISAR DE CUAL ES LA NULL
                         header("Location:../vistas/Registro_FORM.html");
 
                 } else {

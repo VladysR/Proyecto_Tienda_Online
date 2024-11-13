@@ -1,0 +1,15 @@
+#user{
+    position: absolute;
+    top: 0.5%;
+    right: 1%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  #user p {
+    font-size: 12px;
+  }
