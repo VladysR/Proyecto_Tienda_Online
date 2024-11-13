@@ -64,7 +64,7 @@
 
         <label for="descripcion"><textarea name="descripcion" id="descripcion" placeholder="Descripcion" rows="3"  required><?php print($_GET["descripcion"])?></textarea></label>
     
-        <label for="precio"><input type="number" step="0.01" name="precio" placeholder="Precio" value="<?php print($_GET["precio"])?>" required></input></label>
+        <label for="precio"><input type="number" step="0.01" name="precio" placeholder="Precio" value="<?php print($_GET["precio"])?>" min="1"required></input></label>
     
         <div class="buttons">
             <input type="submit" value="ModificarAttr" name="update" class="button"></input>
