@@ -55,11 +55,11 @@
     
   <form action="../controladores/Controlador_Peticiones_Add.php" method="POST">
 
-    <label for="nombre"><input type="text" name="nombre" placeholder="Nombre" required></input></label>
+    <label for="nombre"><input type="text" name="nombre" placeholder="<?php isset($_GET['nombre']) ? print $_GET['nombre'] : print 'Nombre' ?>" required></input></label>
 
-    <label for="descripcion"><textarea name="descripcion" id="descripcion" placeholder="Descripcion" rows="3" required></textarea></label>
+    <label for="descripcion"><textarea name="descripcion" id="descripcion" placeholder="<?php isset($_GET['descripcion']) ? print $_GET['descripcion'] : print 'Descripcion' ?>" rows="3" required></textarea></label>
 
-    <label for="precio"><input type="number" step="0.01" name="precio" placeholder="Precio" required></input></label>
+    <label for="precio"><input type="number" step="0.01" name="precio" placeholder="<?php isset($_GET['precio']) ? print $_GET['precio'] : print 'Precio' ?>" required></input></label>
 
     <div class="buttons">
         <input type="submit" value="Añadir" name="add" class="button"></input>
