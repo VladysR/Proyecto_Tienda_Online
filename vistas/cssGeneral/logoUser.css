@@ -1,7 +1,7 @@
 #user{
     position: absolute;
     top: 1.2%;
-    right: 4%;
+    right: 6.5%;
     color: black;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
 
   #cerrarSesion{
     position: absolute;
-    right: 1%;
+    right: 4%;
     top: 1.8%;
     border: none;
     background: none;
@@ -43,7 +43,7 @@
   #carrito{
     position: absolute;
     top: 2%;
-    right: 7.5%;
+    right: 1%;
     border: none;
     background: none;
   }
