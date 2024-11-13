@@ -80,10 +80,11 @@
         //UPDATE -> Retorna T || F si se ha ejecutado correctamente la query
         public function updateProducto($producto){
             
-            $query=$this->conexion->prepare("UPDATE $this->nombreTabla SET (nombre = :nombre, descripcion = :descripcion, precio = :precio) WHERE (id = :id)");
+            $query=$this->conexion->prepare("UPDATE $this->nombreTabla SET nombre = :nombre, descripcion = :descripcion, precio = :precio WHERE id = :id");
             $query->bindParam(":nombre",$producto->getNombre());
             $query->bindParam(":descripcion",$producto->getDescripcion());
             $query->bindParam(":precio",$producto->getPrecio());
+            $query->bindParam(":id",$producto->getId());
 
             return $query->execute();
         }
