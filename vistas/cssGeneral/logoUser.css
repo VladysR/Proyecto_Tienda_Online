@@ -39,3 +39,15 @@
     background-color: black;
     border-radius: 50px;
   }
+
+  #carrito{
+    position: absolute;
+    top: 2%;
+    right: 7.5%;
+    border: none;
+    background: none;
+  }
+
+  #carrito svg:hover{
+    cursor: pointer;
+  }
