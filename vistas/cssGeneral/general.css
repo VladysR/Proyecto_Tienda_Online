@@ -7,7 +7,10 @@
   
   body{
     min-height: 100dvh;
-    background-color: rgba(245, 245, 245, 0.8);
+    /* background-color: rgba(245, 245, 245, 0.8); */
+    background-image: url(https://suport.fundesplai.org/wp-content/uploads/2021/12/pexels-artem-beliaikin-1036857-scaled.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
