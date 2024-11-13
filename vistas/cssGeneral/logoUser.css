@@ -1,15 +1,41 @@
 #user{
     position: absolute;
-    top: 0.5%;
-    right: 1%;
+    top: 1.2%;
+    right: 4%;
     color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
 
+  #user svg{
+    position: relative;
+    
   }
 
   #user p {
-    font-size: 12px;
+    font-size: 14px;
+    position: absolute;
+    top: 30px;
+    font-weight: bold;
+  }
+
+  #cerrarSesion{
+    position: absolute;
+    right: 1%;
+    top: 1.8%;
+    border: none;
+    background: none;
+  }
+
+  #cerrarSesion svg{
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  #cerrarSesion svg:hover{
+    cursor: pointer;
+    background-color: black;
+    border-radius: 50px;
   }

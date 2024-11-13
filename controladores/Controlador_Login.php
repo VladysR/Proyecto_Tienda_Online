@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../modelos/DAO_Cliente.php");
 
 class Controlador_Login{
@@ -25,6 +26,8 @@ class Controlador_Login{
     public function controlador_entrar($nickname,$pwd){
         if($this->nickname_existe($nickname)){
             if($this->pwd_coincide($nickname,$pwd)){
+
+                $_SESSION['user'] = $nickname;
                 header("Location:../vistas/index.php");
 
             }else{

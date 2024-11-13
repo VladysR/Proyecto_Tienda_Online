@@ -24,6 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         case 'EliminarProducto':
             header('Location:../vistas/Eliminar_FORM.php');
             break;
+
+        case 'cerrarSesion':
+            session_destroy();
+            header('Location:../vistas/login_FORM.html');
+            break;
         
         
     }
