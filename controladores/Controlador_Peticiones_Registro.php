@@ -11,7 +11,7 @@
         //Cualquier letra y retorna el valor o null
         $rgx = "/^[a-zA-Z]+$/";
         
-        if (trim($nombre).preg_match($rgx,$nombre)) {
+        if (preg_match($rgx,trim($nombre))) {
             return $nombre;
         } else {
             return null;
@@ -22,7 +22,7 @@
         // Solo 9 digitos
         $rgx = "/^\d{9}$/";
         
-        if (trim($numero).preg_match($rgx,$numero)) {
+        if (preg_match($rgx,trim($numero))) {
             return $numero;
         } else {
             return null;
@@ -33,7 +33,7 @@
         // Cualquier letra y numero
         $rgx = "/^[a-zA-Z0-9]+$/";
         
-        if (trim($nickname).preg_match($rgx,$nickname)) {
+        if (preg_match($rgx,trim($nickname))) {
             return $nickname;
         } else {
             return null;
@@ -44,7 +44,7 @@
         // Entre 8 y 20 de longitud con letras y numeros
         $rgx = "/^[a-zA-Z0-9]{8,20}$/";
         
-        if (trim($pwd).preg_match($rgx,$pwd)) {
+        if (preg_match($rgx,trim($pwd))) {
             return $pwd;
         } else {
             return null;
