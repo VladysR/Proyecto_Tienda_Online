@@ -9,6 +9,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         $controlador->modificar($_POST["id"],$_POST["nombre"],$_POST["descripcion"],$_POST["precio"]);
       
     }else{
-        header("Location:../vistas/Modificar_FORM.html?aviso=Ha ocurrido un error imprevisto");
+        header("Location:../vistas/Modificar_FORM.php?aviso=Ha ocurrido un error imprevisto");
     }
-}else{header("Location:../vistas/Modificar_FORM.html?aviso=Ha ocurrido un error imprevisto");}
+}else{header("Location:../vistas/Modificar_FORM.php?aviso=Ha ocurrido un error imprevisto");}

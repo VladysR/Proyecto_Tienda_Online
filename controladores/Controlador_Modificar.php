@@ -10,9 +10,9 @@ class Controlador_Modificar{
         $producto = new DTO_Producto($nombre,$descripcion,$precio);
         $producto->setId($id);
         if($this->producto_DAO->updateProducto($producto)){
-            header("Location:../vistas/index.html?aviso= El producto fue modificado con exito");
+            header("Location:../vistas/index.php?aviso= El producto fue modificado con exito");
         }else{
-            header("Location:../vistas/Modificar_FORM.html?aviso= Hubo un error al introducir los datos por favor vuelva a intentar");
+            header("Location:../vistas/Modificar_FORM.php?aviso= Hubo un error al introducir los datos por favor vuelva a intentar");
         }
     }
 }

@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     switch ($_POST["accion"]) 
     {
         case 'AñadirProducto':
-            header('Location:../vistas/Add_FORM.html');
+            header('Location:../vistas/Add_FORM.php');
             break;
 
         case 'ListarProductos':
@@ -18,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             break;
 
         case 'ModificarProducto':
-            header('Location:../vistas/Modificar_FORM.html');
+            header('Location:../vistas/Modificar_FORM.php');
             break;
 
         case 'EliminarProducto':
-            header('Location:../vistas/Eliminar_FORM.html');
+            header('Location:../vistas/Eliminar_FORM.php');
             break;
         
         

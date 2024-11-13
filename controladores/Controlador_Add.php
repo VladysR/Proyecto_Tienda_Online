@@ -15,10 +15,10 @@ class Controlador_Add{
     }
     public function controlador_addProducto ($producto){
         if (!$this->nombre_repetido($producto->getNombre())){ if ($this->producto_DAO->addProducto($producto)) {
-            header("Location:../vistas/index.html");
+            header("Location:../vistas/index.php");
         }else{
-            header("Location:../vistas/Add_FORM.html");}
+            header("Location:../vistas/Add_FORM.php");}
     }else    {
-        header("Location:../vistas/Add_FORM.html");}
+        header("Location:../vistas/Add_FORM.php");}
     }
 }

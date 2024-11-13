@@ -14,5 +14,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
 } else {
-    header('Location:../vistas/Eliminar.html');
+    header('Location:../vistas/Eliminar.php');
 }

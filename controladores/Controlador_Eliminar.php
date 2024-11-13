@@ -14,13 +14,13 @@ class Controlador_Eliminar{
 
         if($this->producto_DAO->getProductoById($id) === null){
 
-            header('Location:../vistas/Eliminar_FORM.html');
+            header('Location:../vistas/Eliminar_FORM.php');
 
         } else {
 
             $this->producto_DAO->deleteProducto($id);
             
-            header('Location:../vistas/index.html');
+            header('Location:../vistas/index.php');
 
         }
 

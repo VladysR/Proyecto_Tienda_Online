@@ -25,7 +25,7 @@ class Controlador_Login{
     public function controlador_entrar($nickname,$pwd){
         if($this->nickname_existe($nickname)){
             if($this->pwd_coincide($nickname,$pwd)){
-                header("Location:../vistas/index.html");
+                header("Location:../vistas/index.php");
 
             }else{
 

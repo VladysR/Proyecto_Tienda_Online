@@ -16,7 +16,7 @@ class Controlador_Modificar_Id{
         $precio = $producto->getPrecio();
         header("Location:../vistas/ModificarAtributos_FORM.php?id=$id&&nombre=$nombre&&descripcion=$descripcion&&precio=$precio");
      }else{
-        header("Location:../vistas/Modificar_FORM.html?aviso=Producto con ese id no existe");
+        header("Location:../vistas/Modificar_FORM.php?aviso=Producto con ese id no existe");
      }
     }
 }
