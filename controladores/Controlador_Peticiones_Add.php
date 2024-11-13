@@ -18,15 +18,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
 
     if($action === "Añadir"){
         $producto = new DTO_Producto($_POST["nombre"],$_POST["descripcion"],$_POST["precio"]);
-    };
-    if(
-        $producto->getNombre() === null ||
-        $producto->getPrecio() === null ||
-        $producto->getDescripcion() === null
-    ){
-        header("Location:../vistas/Add_FORM.php");
-    }else {
         $controlador_add->controlador_addProducto($producto);
-        header("Location:../vistas/Add_FORM.php");
-    }
-} header("Location:../vistas/Add_FORM.php");
+    }        
+    
+} else {header("Location:../vistas/Add_FORM.php");}
