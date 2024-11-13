@@ -77,8 +77,21 @@
                     $cliente->getNickname() === null ||
                     $cliente->getpwd() === null
                     ){
+                        $nombre = ($cliente->getNombre() === null) ? 'Solo letras y numeros' : $cliente->getNombre();
+
+                        $apellido = ($cliente->getApellido() === null) ? 'Solo letras y numeros' : $cliente->getApellido();
+
+                        $telefono = ($cliente->getTelefono() === null) ? 'Telefono de 9 digitos' : $cliente->getTelefono();
+
+                        $nickname = ($cliente->getNickname() === null) ? 'Solo letras y numeros' : $cliente->getNickname();
+
+                        $pwd = ($cliente->getPwd() === null) ? 'Entre 8 y 20 carácteres' : $cliente->getPwd();
+
+                        $domicilio = ($cliente->getDomicilio() === null) ? '' : $cliente->getDomicilio();
+
+
                         //AVISAR DE CUAL ES LA NULL
-                        header("Location:../vistas/Registro_FORM.html");
+                header("Location:../vistas/Registro_FORM.php?nombre=$nombre&apellido=$apellido&telefono=$telefono&nickname=$nickname&pwd=$pwd&domicilio=$domicilio");
 
                 } else {
 
