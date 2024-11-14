@@ -14,6 +14,7 @@
     
   }
 
+
   #user p {
     font-size: 14px;
     position: absolute;
@@ -37,7 +38,7 @@
 
   #cerrarSesion svg:hover{
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(91, 1, 1);
     border-radius: 50px;
   }
 
@@ -49,6 +50,7 @@
     background: none;
   }
 
-  #carrito svg:hover{
+  #carrito svg:hover > path{
     cursor: pointer;
+    fill: yellow;
   }
