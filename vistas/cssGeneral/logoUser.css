@@ -37,7 +37,7 @@
 
   #cerrarSesion svg:hover{
     cursor: pointer;
-    background-color: black;
+    background-color: white;
     border-radius: 50px;
   }
 
