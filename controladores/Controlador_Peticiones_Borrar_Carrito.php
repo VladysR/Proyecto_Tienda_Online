@@ -3,5 +3,6 @@ session_start();
 
 
         unset ($_SESSION["carrito"]);
-        header("../vistas/index.php");
+        $_SESSION["carrito"] = [];
+        header("Location:../vistas/carrito.php");
  

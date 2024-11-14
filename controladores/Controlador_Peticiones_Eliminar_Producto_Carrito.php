@@ -1,5 +1,5 @@
 <?php
-require_once("Location:Controlador_Eliminar_Producto_Carrito.php");
+require_once("Controlador_Eliminar_Producto_Carrito.php");
 
 $controlador_eliminar_carrito = new Controlador_Eliminar_Producto_Carrito();
 

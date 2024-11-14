@@ -16,6 +16,7 @@ class Controlador_Finalizar_Compra{
         $this->DAO_producto->updateProductoCarrito($producto,$id);
     }
     unset($_SESSION["carrito"]);
-    header("Location:../vistas/index.php");
+    $_SESSION["carrito"] = [];
+    header("Location:../vistas/carrito.php");
   }
 }

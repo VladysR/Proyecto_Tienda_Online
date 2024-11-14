@@ -11,11 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     {
         case 'Comprar':
             
-            header("Location:../controladores/Controlador_Peticiones_Finalizar_Compra.php?id=$id");
+            header("Location:../controladores/Controlador_Peticiones_Finalizar_Compra.php");
             break;
 
         case 'Vacíar carrito':
-            header("Location:../controladores/Controlador_Peticiones_Borrar_Carrito.php?id=$id");
+            header("Location:../controladores/Controlador_Peticiones_Borrar_Carrito.php");
             break;
 
         case '+':
