@@ -58,6 +58,8 @@
   </header>
 
   <main class="container-main">
+
+    <?php isset($_GET["aviso"]) ? print "<p style=\"color: red; backdrop-filter: blur(10px);\">".$_GET["aviso"]."</p>" : "";?>
     
     <table>
       <tr> <th>ID</th><th>Nombre</th> <th>Descripcion</th> <th>Precio</th> <th id="add">Añadir a carrito</th></tr>
