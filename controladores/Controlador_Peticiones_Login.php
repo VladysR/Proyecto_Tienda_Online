@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+$_SESSION["carrito"]=[];
     require_once("Controlador_Login.php");
 
     $controlador_login = new Controlador_Login();

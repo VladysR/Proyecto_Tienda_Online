@@ -29,7 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_destroy();
             header('Location:../vistas/login_FORM.php');
             break;
-        
+        case 'carrito':
+            header("Location:../vistas/carrito.php");
+            break;
         
     }
     

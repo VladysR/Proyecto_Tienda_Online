@@ -13,6 +13,7 @@
   session_start();
   require_once("../modelos/DTO_Producto.php");
   require_once("../controladores/Controlador_List.php");
+  $productos=$_SESSION["carrito"];
   ?>
 </head>
 <body>
@@ -57,27 +58,22 @@
   <main class="container-main">
     
     <table>
-      <tr> <th>ID</th><th>Nombre</th> <th>Descripcion</th> <th>Precio</th> <th>Añadir a carrito</th></tr>
-  <?php 
-
-      $controlador_list = new Controlador_List();
-      $productos = $controlador_list->get_list();
-      
+      <tr> <th>ID</th><th>Nombre</th> <th>Descripcion</th> <th>Precio</th> </tr>
+      <?php 
+    $DAO_producto = new DAO_Producto();
        foreach ($productos as $producto) {
-
+        $producto = $DAO_producto->getProductoById($producto);
         if ($producto->getCliente_id() == null) {
         print "<tr>";
         print "<td>" . $producto->getId() . "</td>";
         print "<td>" . $producto->getNombre() . "</td>";
         print "<td>" . $producto->getDescripcion() . "</td>";
         print "<td>" . $producto->getPrecio() . "</td>";
-        print "<td><form action=\"../controladores/Controlador_Peticiones_Add_Carrito.php\" method=\"POST\">";
-        print "<label for=\"id\"> <input type=\"number\" name=\"id\" style=\"display: none;\" value=".$producto->getId()."> </input> </label>";
-        print "<input type=\"submit\" name=\"accion\" value=\"+\"></input></td>";
-        print "</form>";
         print "</tr>";
         }
     }
+      
+      
       ?>
     </table>
 
