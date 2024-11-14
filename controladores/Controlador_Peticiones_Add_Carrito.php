@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
     if($action === "+"){
     $controlador_add_carrito->controlador_addProducto_Carrito($_POST["id"]);
     }else{
-        header("Location:../vistas/listar_productos.php.php");
+        header("Location:../vistas/listar_productos.php");
     }
     
 } else {
-    header("Location:../vistas/listar_productos.php.php");
+    header("Location:../vistas/listar_productos.php");
 }

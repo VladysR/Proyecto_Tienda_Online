@@ -40,7 +40,15 @@ button:hover{
     cursor: pointer;
 }
 
- form input:hover{
+ form button:hover{
     cursor: pointer;
 }
+form #bt{
+    background: none;
+    border: none;
+    padding: 1%;
+  }
 
+  form #bt:hover{
+    cursor: pointer;
+}
