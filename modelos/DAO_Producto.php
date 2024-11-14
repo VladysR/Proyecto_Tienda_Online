@@ -75,7 +75,15 @@
 
             return $query->execute();
         }
-        
+
+            public function updateProductoCarrito($producto,$cliente_id){
+            
+            $query=$this->conexion->prepare("UPDATE $this->nombreTabla SET cliente_id = :cliente_id WHERE id = :id");
+            $query->bindParam(":cliente_id",$cliente_id);
+            $query->bindParam(":id",$producto->getId());
+
+            return $query->execute();
+        }
 
         //UPDATE -> Retorna T || F si se ha ejecutado correctamente la query
         public function updateProducto($producto){
