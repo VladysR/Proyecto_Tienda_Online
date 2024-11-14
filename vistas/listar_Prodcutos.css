@@ -27,6 +27,9 @@
     width: 10%;
   }
 
+  form input:hover{
+    cursor: pointer;
+}
   
 
  
