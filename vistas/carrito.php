@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="cssGeneral/header.css">
   <link rel="stylesheet" href="cssGeneral/footer.css">
   <link rel="stylesheet" href="cssGeneral/logoUser.css">
+  <link rel="stylesheet" href="carrito.css">
   <?php 
   session_start();
   require_once("../modelos/DTO_Producto.php");
@@ -58,7 +59,7 @@
   <main class="container-main">
     
     <table>
-      <tr> <th>ID</th><th>Nombre</th> <th>Descripcion</th> <th>Precio</th> </tr>
+      <tr> <th>ID</th><th>Nombre</th> <th>Descripcion</th> <th>Precio</th> <th>Eliminar artículo</th> </tr>
       <?php 
     $DAO_producto = new DAO_Producto();
        foreach ($productos as $producto) {
@@ -69,6 +70,10 @@
         print "<td>" . $producto->getNombre() . "</td>";
         print "<td>" . $producto->getDescripcion() . "</td>";
         print "<td>" . $producto->getPrecio() . "</td>";
+        print "<td><form action=\"../controladores/Controlador_Peticiones_Add_Carrito.php\" method=\"POST\">";
+        print "<label for=\"id\"> <input type=\"number\" name=\"id\" style=\"display: none;\" value=".$producto->getId()."> </input> </label>";
+        print "<input type=\"submit\" name=\"accion\" value=\"-\"></input></td>";
+        print "</form>";
         print "</tr>";
         }
     }
@@ -76,6 +81,13 @@
       
       ?>
     </table>
+
+    <div class="container-buttons">
+      <form action="" method="post" id="form-button">
+        <button type="submit" name="accion" value="Comprar">Comprar</button>
+        <button type="submit" name="accion" value="Vacíar carrito">Vacíar carrito</button>
+      </form>
+    </div>
 
   </main>
 
