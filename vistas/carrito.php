@@ -13,7 +13,6 @@
   <?php 
   session_start();
   require_once("../modelos/DTO_Producto.php");
-  // require_once("../modelos/DAO_Producto.php");
   require_once("../controladores/Controlador_List.php");
   $productos=$_SESSION["carrito"];
   ?>

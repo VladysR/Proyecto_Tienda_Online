@@ -58,9 +58,8 @@
     <form action="../controladores/Controlador_Peticiones_Modificar.php" method="POST">
 
 
-    <!--ÑAPONCIO QUE FLIPAS HAY QUE PENSAR ALGO-->
+    <!--No se muestra en html pero está por detrás para usar el id-->
       <label for="id" style="display: none;"><input type="number" name="id" style="display: none;" value="<?php print($_GET["id"])?>"> </label>
-<!--ÑAPONCIO QUE FLIPAS HAY QUE PENSAR ALGO-->
 
 
         <label for="nombre"><input type="text" name="nombre" placeholder="Nombre" value="<?php print($_GET["nombre"])?>" required></input></label>
