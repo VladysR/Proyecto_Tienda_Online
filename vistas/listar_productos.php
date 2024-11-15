@@ -62,7 +62,7 @@
     <?php isset($_GET["aviso"]) ? print "<p style=\"color: red; backdrop-filter: blur(10px);\">".$_GET["aviso"]."</p>" : "";?>
     
     <table>
-      <tr> <th>ID</th><th>Nombre</th> <th>Descripcion</th> <th>Precio</th> <th id="add">Añadir a carrito</th></tr>
+      <tr> <th>ID</th><th>Nombre</th> <th>Descripcion</th> <th>Oferta</th> <th>Precio</th> <th id="add">Añadir a carrito</th></tr>
   <?php 
 
       $controlador_list = new Controlador_List();
@@ -75,6 +75,13 @@
         print "<td>" . $producto->getId() . "</td>";
         print "<td>" . $producto->getNombre() . "</td>";
         print "<td>" . $producto->getDescripcion() . "</td>";
+        if($producto->getPrecio()<=10){
+          print "<td>Producto de oferta</td>";
+        }elseif ($producto->getPrecio()>=200){
+          print "<td>Producto de calidad</td>";
+        }else{
+          print "<td></td>";
+        }
         print "<td>" . $producto->getPrecio() . "</td>";
         print "<td><form action=\"../controladores/Controlador_Peticiones_Carrito.php\" method=\"POST\">";
         print "<label for=\"id\"> <input type=\"number\" name=\"id\" style=\"display: none;\" value=".$producto->getId()."> </input> </label>";
