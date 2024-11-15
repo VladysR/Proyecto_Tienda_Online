@@ -29,7 +29,10 @@
 
    
       <section class="menu-container">
+      <?php isset($_GET['aviso']) ? print "<p>".$_GET['aviso']."<p>" : ""; ?>
+      
         <form action="../controladores/Controlador_Peticiones_Index.php" method="POST">
+
         <ul class="menu">
           
           <li class="element">
@@ -50,6 +53,7 @@
         </ul>
       </form>
       </section>
+
    
   
 

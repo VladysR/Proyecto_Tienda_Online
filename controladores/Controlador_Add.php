@@ -21,7 +21,7 @@ class Controlador_Add{
 
             if ($this->producto_DAO->addProducto($producto)) {
 
-                header("Location:../vistas/index.php?aviso= El producto fue añadido con exito");
+                header("Location:../vistas/index.php?aviso= El producto fue añadido con éxito");
 
             }else{
 
