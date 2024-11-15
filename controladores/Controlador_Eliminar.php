@@ -20,7 +20,7 @@ class Controlador_Eliminar{
 
             $this->producto_DAO->deleteProducto($id);
             
-            header('Location:../vistas/index.php');
+            header('Location:../vistas/index.php?aviso= El producto fue eliminado con exito');
 
         }
 
