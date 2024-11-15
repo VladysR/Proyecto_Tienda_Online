@@ -52,3 +52,24 @@ form #bt{
   form #bt:hover{
     cursor: pointer;
 }
+
+.total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    color: whitesmoke;
+    margin: 2%;
+    border: white 2px solid;
+    height: 40px;
+}
+
+.total label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
